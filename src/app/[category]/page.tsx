@@ -39,10 +39,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     notFound();
   }
 
-  // Determine if this category should show an image slot
-  // Main food categories get image slots, sides/extras don't
-  const showImageSlot = !["side-dishes", "extra-choices"].includes(category.slug);
-
   // Split items into two columns for print layout
   const midpoint = Math.ceil(category.items.length / 2);
   const leftColumn = category.items.slice(0, midpoint);
@@ -56,7 +52,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         <p className="text-sm text-[#8B0000]/70 tracking-widest">LYNNWOOD</p>
       </div>
 
-      <CategoryHeader name={category.name} note={category.note} imageSlot={showImageSlot} />
+      <CategoryHeader name={category.name} note={category.note} />
 
       {/* Two-column layout for menu items */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0">

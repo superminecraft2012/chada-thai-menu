@@ -1,19 +1,11 @@
 interface CategoryHeaderProps {
   name: string;
   note?: string;
-  imageSlot?: boolean;
 }
 
-export default function CategoryHeader({ name, note, imageSlot = true }: CategoryHeaderProps) {
+export default function CategoryHeader({ name, note }: CategoryHeaderProps) {
   return (
     <div className="text-center mb-8 print:mb-6">
-      {/* Optional image slot at top of category */}
-      {imageSlot && (
-        <div className="w-full max-w-md mx-auto h-48 mb-6 rounded-lg bg-gradient-to-br from-[#8B0000]/5 to-[#D4AF37]/10 border-2 border-dashed border-[#D4AF37]/40 flex items-center justify-center print:hidden">
-          <p className="text-sm text-[#8B0000]/40 italic">Category image (optional)</p>
-        </div>
-      )}
-      
       {/* Decorative top border */}
       <div className="flex items-center justify-center gap-4 mb-4">
         <div className="w-16 h-px bg-[#D4AF37]"></div>

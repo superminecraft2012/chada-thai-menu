@@ -2,7 +2,7 @@ export interface MenuItem {
   name: string;
   description: string;
   price: string;
-  image?: string;
+  spiceLevel?: number;
 }
 
 export interface MenuCategory {
@@ -36,6 +36,7 @@ export const menuData: MenuCategory[] = [
         name: "Fish Cake",
         description: "A blend of fish, curry paste, green beans, and sliced lime leaves. Served with spicy hot cucumber sauce.",
         price: "$13.45",
+        spiceLevel: 1,
       },
       {
         name: "Coconut Prawns",
@@ -81,6 +82,7 @@ export const menuData: MenuCategory[] = [
         name: "Chiang Mai Sausage",
         description: "Grilled spicy Northern Thai sausage.",
         price: "$13.45",
+        spiceLevel: 1,
       },
       {
         name: "Esan Sausage",
@@ -113,6 +115,7 @@ export const menuData: MenuCategory[] = [
         name: "Tom Yum",
         description: "Hot and sour soup with lemongrass, lime leaves, and chili paste.",
         price: "$16.45",
+        spiceLevel: 1,
       },
       {
         name: "Tom Kha",
@@ -144,16 +147,19 @@ export const menuData: MenuCategory[] = [
         name: "Yum Woon Sen",
         description: "Ground chicken, glass noodles, onion, shrimp, cashew nuts, and tomatoes in lime chili sauce.",
         price: "$17.45",
+        spiceLevel: 1,
       },
       {
         name: "Yum Beef",
         description: "Grilled beef in spicy lime juice, garnished with red onion, served on fresh lettuce.",
         price: "$16.45",
+        spiceLevel: 1,
       },
       {
         name: "Yum Seafood",
         description: "Prawns, squids, mussels, and scallops with lemongrass, onion, and lettuce.",
         price: "$11.45",
+        spiceLevel: 1,
       },
       {
         name: "Larb Gai",
@@ -269,6 +275,7 @@ export const menuData: MenuCategory[] = [
         name: "Phad Kee Mao",
         description: "Stir-fried wide rice noodles with special chili sauce, fresh sweet basil, broccoli, tomato, onion, and egg.",
         price: "$16.95",
+        spiceLevel: 1,
       },
       {
         name: "Rad Nah",
@@ -374,11 +381,13 @@ export const menuData: MenuCategory[] = [
         name: "Red Curry",
         description: "Red curry with coconut milk, bamboo shoots, red and green bell peppers, and basil.",
         price: "$16.95",
+        spiceLevel: 1,
       },
       {
         name: "Green Curry",
         description: "Green curry with coconut milk, bamboo shoots, red and green bell peppers, and basil. (Avocado +$2).",
         price: "$16.95",
+        spiceLevel: 1,
       },
       {
         name: "Yellow Curry",
@@ -389,16 +398,19 @@ export const menuData: MenuCategory[] = [
         name: "Panang Curry",
         description: "Red curry sauce slowly cooked with coconut milk, red and green bell peppers.",
         price: "$16.95",
+        spiceLevel: 1,
       },
       {
         name: "Massaman Curry",
         description: "Spicy curry with coconut milk, potatoes, carrots, onion, and peanuts.",
         price: "$16.95",
+        spiceLevel: 1,
       },
       {
         name: "Pumpkin Curry",
         description: "Red curry with coconut milk, pumpkin, red and green bell peppers, and basil.",
         price: "$16.95",
+        spiceLevel: 1,
       },
     ],
   },
@@ -410,21 +422,25 @@ export const menuData: MenuCategory[] = [
         name: "Prawns Curry",
         description: "Spicy red curry with prawns, bamboo shoots, pineapple, red and green bell peppers, and basil.",
         price: "$19.45",
+        spiceLevel: 2,
       },
       {
         name: "Salmon Curry",
         description: "Spicy red curry with salmon, bamboo shoots, red and green bell peppers, and basil.",
         price: "$20.45",
+        spiceLevel: 2,
       },
       {
         name: "Duck Curry",
         description: "Red curry with coconut milk, roasted duck, pineapple, and tomatoes.",
         price: "$26.45",
+        spiceLevel: 1,
       },
       {
         name: "Fisherman Curry",
         description: "Prawns, scallops, and squid with basil leaves and bamboo shoots in red curry.",
         price: "$20.45",
+        spiceLevel: 1,
       },
     ],
   },

@@ -1,14 +1,31 @@
+import Image from "next/image";
+
 interface MenuItemProps {
   name: string;
   description: string;
   price: string;
+  spiceLevel?: number;
 }
 
-export default function MenuItem({ name, description, price }: MenuItemProps) {
+export default function MenuItem({ name, description, price, spiceLevel }: MenuItemProps) {
   return (
     <div className="py-3 border-b border-[#D4AF37]/20 last:border-b-0">
       <div className="flex justify-between items-baseline gap-2">
         <h3 className="text-lg font-semibold text-[#8B0000]">{name}</h3>
+        {spiceLevel && spiceLevel > 0 && (
+          <span className="flex items-center gap-0.5 shrink-0">
+            {Array.from({ length: spiceLevel }).map((_, i) => (
+              <Image
+                key={i}
+                src="/PepperIcon.png"
+                alt="spicy"
+                width={16}
+                height={16}
+                className="inline-block"
+              />
+            ))}
+          </span>
+        )}
         <div className="flex-1 border-b border-dotted border-[#8B0000]/30 mx-2 mb-1"></div>
         <span className="text-lg font-bold text-[#5C0000] whitespace-nowrap">{price}</span>
       </div>

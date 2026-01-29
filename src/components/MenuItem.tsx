@@ -15,14 +15,14 @@ export default function MenuItem({ name, description, price, spiceLevel }: MenuI
         {spiceLevel && spiceLevel > 0 && (
           <span className="flex items-center gap-0.5 shrink-0">
             {Array.from({ length: spiceLevel }).map((_, i) => (
-              <Image
-                key={i}
-                src="/PepperIcon.png"
-                alt="spicy"
-                width={32}
-                height={32}
-                className="inline-block"
-              />
+              <span key={i} className="inline-block overflow-hidden" style={{ height: '22px' }}>
+                <Image
+                  src="/PepperIcon.png"
+                  alt="spicy"
+                  width={32}
+                  height={32}
+                />
+              </span>
             ))}
           </span>
         )}

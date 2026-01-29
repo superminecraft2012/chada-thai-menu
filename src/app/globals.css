@@ -16,10 +16,31 @@
 }
 
 body {
-  background: linear-gradient(135deg, var(--color-cream) 0%, #FFF5EB 100%);
+  background: var(--color-cream);
   color: var(--color-text-dark);
-  font-family: 'Georgia', serif;
+  font-family: 'Georgia', 'Times New Roman', serif;
   min-height: 100vh;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .page-break {
+    page-break-before: always;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  nav, footer {
+    display: none !important;
+  }
 }
 
 /* Custom scrollbar */
@@ -38,11 +59,4 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary-dark);
-}
-
-/* Page break for printing */
-@media print {
-  .page-break {
-    page-break-before: always;
-  }
 }

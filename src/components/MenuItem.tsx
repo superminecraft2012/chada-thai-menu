@@ -13,7 +13,7 @@ export default function MenuItem({ name, description, price, spiceLevel }: MenuI
       <div className="flex justify-between items-baseline gap-2">
         <h3 className="text-lg font-semibold text-[#8B0000]">{name}</h3>
         {spiceLevel && spiceLevel > 0 && (
-          <span className="flex items-center gap-0.5 shrink-0">
+          <span className="flex items-center gap-0.5 shrink-0 -mr-[10px]">
             {Array.from({ length: spiceLevel }).map((_, i) => (
               <Image
                 key={i}

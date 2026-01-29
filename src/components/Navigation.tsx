@@ -6,14 +6,23 @@ import { menuData } from "@/data/menuData";
 
 export default function Navigation() {
   const pathname = usePathname();
+  const isSeattle = pathname.startsWith("/seattle");
+  const basePath = isSeattle ? "/seattle" : "";
+  const locationName = isSeattle ? "Seattle" : "Lynnwood";
+  
+  // Check if current path matches, accounting for location prefix
+  const isActive = (path: string) => {
+    const fullPath = basePath + path;
+    return pathname === fullPath || (path === "" && pathname === basePath);
+  };
 
   return (
     <nav className="bg-[#8B0000] shadow-lg sticky top-0 z-50 no-print">
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex items-center justify-between h-14">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href={basePath || "/"} className="flex items-center gap-2">
             <span className="text-xl font-bold text-[#D4AF37] font-serif">Chada Thai</span>
-            <span className="text-xs text-white/70">Lynnwood</span>
+            <span className="text-xs text-white/70">{locationName}</span>
           </Link>
           
           <button 
@@ -31,9 +40,9 @@ export default function Navigation() {
         <div className="overflow-x-auto pb-2 -mx-4 px-4">
           <div className="flex gap-1 min-w-max">
             <Link
-              href="/"
+              href={basePath || "/"}
               className={`px-3 py-1.5 rounded text-sm transition-colors ${
-                pathname === "/"
+                isActive("")
                   ? "bg-[#FFF8F0] text-[#8B0000] font-medium"
                   : "text-white/80 hover:bg-[#5C0000] hover:text-white"
               }`}
@@ -43,9 +52,9 @@ export default function Navigation() {
             {menuData.map((category) => (
               <Link
                 key={category.slug}
-                href={`/${category.slug}`}
+                href={`${basePath}/${category.slug}`}
                 className={`px-3 py-1.5 rounded text-sm transition-colors whitespace-nowrap ${
-                  pathname === `/${category.slug}`
+                  isActive(`/${category.slug}`)
                     ? "bg-[#FFF8F0] text-[#8B0000] font-medium"
                     : "text-white/80 hover:bg-[#5C0000] hover:text-white"
                 }`}

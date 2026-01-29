@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { menuData, getCategoryBySlug } from "@/data/menuData";
+import { menuData, getCategoryBySlug } from "@/data/seattleMenu";
 import MenuItem from "@/components/MenuItem";
 import CategoryHeader from "@/components/CategoryHeader";
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { menuData } from "@/data/menuData";
+import { menuData } from "@/data/lynnwoodMenu";
 
 export default function LynnwoodHome() {
   return (

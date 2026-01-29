@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { menuData } from "@/data/menuData";
+import { menuData } from "@/data/seattleMenu";
 
 export default function SeattleHome() {
   return (
@@ -44,18 +44,24 @@ export default function SeattleHome() {
           Menu
         </h2>
         
-        <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
-          {menuData.map((category) => (
-            <Link
-              key={category.slug}
-              href={`/seattle/${category.slug}`}
-              className="text-center py-3 px-4 text-[#8B0000] hover:text-[#5C0000] hover:bg-[#D4AF37]/10 rounded transition-colors border-b border-[#D4AF37]/20"
-            >
-              <span className="font-serif">{category.name}</span>
-              <span className="text-xs text-gray-500 block mt-1">{category.items.length} items</span>
-            </Link>
-          ))}
-        </div>
+        {menuData.length > 0 ? (
+          <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
+            {menuData.map((category) => (
+              <Link
+                key={category.slug}
+                href={`/seattle/${category.slug}`}
+                className="text-center py-3 px-4 text-[#8B0000] hover:text-[#5C0000] hover:bg-[#D4AF37]/10 rounded transition-colors border-b border-[#D4AF37]/20"
+              >
+                <span className="font-serif">{category.name}</span>
+                <span className="text-xs text-gray-500 block mt-1">{category.items.length} items</span>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-gray-500 italic font-serif">Menu coming soon</p>
+          </div>
+        )}
       </div>
 
       {/* Footer info */}

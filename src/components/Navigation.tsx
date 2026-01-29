@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { menuData } from "@/data/menuData";
+import { menuData as lynnwoodMenu } from "@/data/lynnwoodMenu";
+import { menuData as seattleMenu } from "@/data/seattleMenu";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -15,6 +16,9 @@ export default function Navigation() {
   };
   
   const locationInfo = getLocationInfo();
+  
+  // Get the correct menu data for the current location
+  const menuData = locationInfo?.name === "Seattle" ? seattleMenu : lynnwoodMenu;
   
   // Check if current path matches, accounting for location prefix
   const isActive = (path: string) => {

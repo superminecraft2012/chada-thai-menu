@@ -19,8 +19,8 @@ export default function MenuItem({ name, description, price, spiceLevel }: MenuI
                 key={i}
                 src="/PepperIcon.png"
                 alt="spicy"
-                width={16}
-                height={16}
+                width={32}
+                height={32}
                 className="inline-block"
               />
             ))}

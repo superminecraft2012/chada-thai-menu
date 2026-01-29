@@ -3,6 +3,8 @@ export interface MenuItem {
   description: string;
   price: string;
   spiceLevel?: number;
+  vegan?: boolean;
+  glutenFree?: boolean;
 }
 
 export interface MenuCategory {
@@ -21,6 +23,7 @@ export const menuData: MenuCategory[] = [
         name: "Spring Rolls",
         description: "Mixed vegetables wrapped in egg roll wrappers, deep-fried. Served with special plum sauce.",
         price: "$11.45",
+        glutenFree: true,
       },
       {
         name: "Pot Stickers",
@@ -52,6 +55,7 @@ export const menuData: MenuCategory[] = [
         name: "Chicken Satay",
         description: "Grilled marinated chicken in coconut milk, curry powder, and garlic on skewers. Served with peanut sauce and cucumber salad.",
         price: "$12.45",
+        vegan: true,
       },
       {
         name: "Moo Ping",
@@ -62,6 +66,7 @@ export const menuData: MenuCategory[] = [
         name: "Fresh Rolls TV",
         description: "Vermicelli noodles, lettuce, cucumber, and basil. Wrapped in rice paper. Served with our special sauce.",
         price: "$11.45",
+        vegan: true,
       },
       {
         name: "Fresh Rolls (Prawn)",
@@ -72,11 +77,14 @@ export const menuData: MenuCategory[] = [
         name: "Tofu Tod",
         description: "Deep-fried tofu. Served with house special sauce.",
         price: "$11.45",
+        vegan: true,
+        glutenFree: true,
       },
       {
         name: "Chive Cakes",
         description: "Pan-fried chive rice cakes. Served with house special sauce.",
         price: "$11.45",
+        vegan: true,
       },
       {
         name: "Chiang Mai Sausage",
@@ -121,6 +129,7 @@ export const menuData: MenuCategory[] = [
         name: "Tom Kha",
         description: "Coconut milk soup with mushrooms, lemongrass, onion, and lime leaves.",
         price: "$16.45",
+        vegan: true,
       },
       {
         name: "Wonton Soup",
@@ -142,6 +151,7 @@ export const menuData: MenuCategory[] = [
         name: "Chada's Salad",
         description: "Lettuce, tomato, cucumber, and bean sprouts served with homemade peanut sauce dressing.",
         price: "$11.45",
+        vegan: true,
       },
       {
         name: "Yum Woon Sen",
@@ -218,6 +228,7 @@ export const menuData: MenuCategory[] = [
         name: "Swimming Rama",
         description: "Sautéed spinach topped with homemade delicious peanut sauce.",
         price: "$16.95",
+        glutenFree: true,
       },
       {
         name: "Stir-Fried Broccoli",
@@ -382,35 +393,47 @@ export const menuData: MenuCategory[] = [
         description: "Red curry with coconut milk, bamboo shoots, red and green bell peppers, and basil.",
         price: "$16.95",
         spiceLevel: 1,
+        vegan: true,
+        glutenFree: true,
       },
       {
         name: "Green Curry",
         description: "Green curry with coconut milk, bamboo shoots, red and green bell peppers, and basil. (Avocado +$2).",
         price: "$16.95",
         spiceLevel: 1,
+        vegan: true,
+        glutenFree: true,
       },
       {
         name: "Yellow Curry",
         description: "Yellow curry with coconut milk, potatoes, carrots, and onion.",
         price: "$16.95",
+        vegan: true,
+        glutenFree: true,
       },
       {
         name: "Panang Curry",
         description: "Red curry sauce slowly cooked with coconut milk, red and green bell peppers.",
         price: "$16.95",
         spiceLevel: 1,
+        vegan: true,
+        glutenFree: true,
       },
       {
         name: "Massaman Curry",
         description: "Spicy curry with coconut milk, potatoes, carrots, onion, and peanuts.",
         price: "$16.95",
         spiceLevel: 1,
+        vegan: true,
+        glutenFree: true,
       },
       {
         name: "Pumpkin Curry",
         description: "Red curry with coconut milk, pumpkin, red and green bell peppers, and basil.",
         price: "$16.95",
         spiceLevel: 1,
+        vegan: true,
+        glutenFree: true,
       },
     ],
   },
@@ -423,24 +446,28 @@ export const menuData: MenuCategory[] = [
         description: "Spicy red curry with prawns, bamboo shoots, pineapple, red and green bell peppers, and basil.",
         price: "$19.45",
         spiceLevel: 2,
+        glutenFree: true,
       },
       {
         name: "Salmon Curry",
         description: "Spicy red curry with salmon, bamboo shoots, red and green bell peppers, and basil.",
         price: "$20.45",
         spiceLevel: 2,
+        glutenFree: true,
       },
       {
         name: "Duck Curry",
         description: "Red curry with coconut milk, roasted duck, pineapple, and tomatoes.",
         price: "$26.45",
         spiceLevel: 1,
+        glutenFree: true,
       },
       {
         name: "Fisherman Curry",
         description: "Prawns, scallops, and squid with basil leaves and bamboo shoots in red curry.",
         price: "$20.45",
         spiceLevel: 1,
+        glutenFree: true,
       },
     ],
   },

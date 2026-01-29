@@ -5,13 +5,31 @@ interface MenuItemProps {
   description: string;
   price: string;
   spiceLevel?: number;
+  vegan?: boolean;
+  glutenFree?: boolean;
 }
 
-export default function MenuItem({ name, description, price, spiceLevel }: MenuItemProps) {
+export default function MenuItem({ name, description, price, spiceLevel, vegan, glutenFree }: MenuItemProps) {
   return (
     <div className="py-3 border-b border-[#D4AF37]/20 last:border-b-0">
       <div className="flex justify-between items-baseline gap-2">
         <h3 className="text-lg font-semibold text-[#8B0000]">{name}</h3>
+        {/* Dietary indicators */}
+        {(vegan || glutenFree) && (
+          <span className="flex items-center gap-1 shrink-0">
+            {vegan && (
+              <span className="w-6 h-6 rounded-full border-2 border-green-600 text-green-600 text-xs font-bold flex items-center justify-center">
+                V
+              </span>
+            )}
+            {glutenFree && (
+              <span className="w-6 h-6 rounded-full border-2 border-amber-600 text-amber-600 text-[10px] font-bold flex items-center justify-center">
+                GF
+              </span>
+            )}
+          </span>
+        )}
+        {/* Spice level indicators */}
         {spiceLevel && spiceLevel > 0 && (
           <span className="flex items-center gap-0.5 shrink-0 -mr-[10px]">
             {Array.from({ length: spiceLevel }).map((_, i) => (

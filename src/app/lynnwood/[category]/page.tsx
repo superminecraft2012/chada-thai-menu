@@ -58,6 +58,8 @@ export default async function LynnwoodCategoryPage({ params }: CategoryPageProps
             description={item.description}
             price={item.price}
             spiceLevel={item.spiceLevel}
+            vegan={item.vegan}
+            glutenFree={item.glutenFree}
           />
         ))}
       </div>

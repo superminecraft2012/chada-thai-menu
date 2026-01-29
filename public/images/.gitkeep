@@ -1,0 +1,13 @@
+# This folder is for menu item images
+# Add images here and reference them in src/data/menuData.ts
+# 
+# Recommended image size: 400x300px
+# Supported formats: jpg, png, webp
+#
+# To add an image to a menu item, update the menuData.ts file:
+# {
+#   name: "Spring Rolls",
+#   description: "...",
+#   price: "$11.45",
+#   image: "/images/spring-rolls.jpg"  // <-- Add this line
+# }

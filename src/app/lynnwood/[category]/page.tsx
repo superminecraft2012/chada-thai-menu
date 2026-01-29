@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: CategoryPageProps) {
   };
 }
 
-export default async function CategoryPage({ params }: CategoryPageProps) {
+export default async function LynnwoodCategoryPage({ params }: CategoryPageProps) {
   const { category: categorySlug } = await params;
   const category = getCategoryBySlug(categorySlug);
 
@@ -96,7 +96,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             <>
               {prevCategory ? (
                 <a
-                  href={`/${prevCategory.slug}`}
+                  href={`/lynnwood/${prevCategory.slug}`}
                   className="flex items-center gap-2 text-[#8B0000] hover:text-[#5C0000] transition-colors"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,7 +109,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               )}
               {nextCategory ? (
                 <a
-                  href={`/${nextCategory.slug}`}
+                  href={`/lynnwood/${nextCategory.slug}`}
                   className="flex items-center gap-2 text-[#8B0000] hover:text-[#5C0000] transition-colors"
                 >
                   <span>{nextCategory.name}</span>

@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 
 const locations = [
-  { id: "lynnwood", name: "Lynnwood", path: "" },
+  { id: "lynnwood", name: "Lynnwood", path: "/lynnwood" },
   { id: "seattle", name: "Seattle", path: "/seattle" },
 ];
 
@@ -11,21 +11,26 @@ export default function LocationSwitcher() {
   const pathname = usePathname();
   const router = useRouter();
   
-  const isSeattle = pathname.startsWith("/seattle");
-  const currentLocation = isSeattle ? "seattle" : "lynnwood";
+  // Determine current location from path
+  const getCurrentLocation = () => {
+    if (pathname.startsWith("/seattle")) return "seattle";
+    if (pathname.startsWith("/lynnwood")) return "lynnwood";
+    return null; // On home page
+  };
+  
+  const currentLocation = getCurrentLocation();
+
+  // Don't show switcher on home page
+  if (!currentLocation) return null;
 
   const handleSwitch = (locationId: string) => {
     if (locationId === currentLocation) return;
     
-    if (locationId === "seattle") {
-      // Going to Seattle - add /seattle prefix
-      const currentPath = pathname === "/" ? "" : pathname;
-      router.push(`/seattle${currentPath}`);
-    } else {
-      // Going to Lynnwood - remove /seattle prefix
-      const newPath = pathname.replace(/^\/seattle/, "") || "/";
-      router.push(newPath);
-    }
+    // Get the current path without the location prefix
+    const pathWithoutLocation = pathname.replace(/^\/(lynnwood|seattle)/, "") || "";
+    
+    // Navigate to the same page in the other location
+    router.push(`/${locationId}${pathWithoutLocation}`);
   };
 
   return (

@@ -64,7 +64,7 @@ export const menuData: MenuCategory[] = [
       },
       {
         name: "Fresh Rolls (Tofu)",
-        description: "Vermicelli noodles, lettuce, cucumber, and basil wrapped in rice paper. Served with our special sauce.",
+        description: "Vermicelli noodles, tofu, lettuce, cucumber, and basil wrapped in rice paper. Served with our special sauce.",
         price: "$10.45",
       },
       {

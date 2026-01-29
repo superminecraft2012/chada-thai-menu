@@ -2,6 +2,7 @@ export interface MenuItem {
   name: string;
   description: string;
   price: string;
+  spiceLevel?: number;
 }
 
 export interface MenuCategory {
@@ -202,11 +203,13 @@ export const menuData: MenuCategory[] = [
         name: "Red Curry",
         description: "Red curry with coconut milk, bamboo shoots, red and green bell peppers, and basil.",
         price: "$14.95",
+        spiceLevel: 1,
       },
       {
         name: "Green Curry",
         description: "Green curry with coconut milk, bamboo shoots, red and green bell peppers, and basil.",
         price: "$14.95",
+        spiceLevel: 1,
       },
       {
         name: "Yellow Curry",
@@ -217,21 +220,25 @@ export const menuData: MenuCategory[] = [
         name: "Panang Curry",
         description: "Red curry sauce slowly cooked with coconut milk, red and green bell peppers.",
         price: "$14.95",
+        spiceLevel: 1,
       },
       {
         name: "Massaman Curry",
         description: "Spicy curry with coconut milk, potatoes, carrots, onions, and peanuts.",
         price: "$14.95",
+        spiceLevel: 2,
       },
       {
         name: "Pumpkin Curry",
         description: "Red curry with coconut milk, pumpkin, red and green bell peppers, and basil.",
         price: "$14.95",
+        spiceLevel: 1,
       },
       {
         name: "Avocado Green",
         description: "Green curry with coconut milk, bamboo shoots, red and green bell peppers, basil, and avocado.",
         price: "$16.95",
+        spiceLevel: 1,
       },
     ],
   },

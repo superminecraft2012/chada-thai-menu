@@ -57,6 +57,7 @@ export default async function SeattleCategoryPage({ params }: CategoryPageProps)
             name={item.name}
             description={item.description}
             price={item.price}
+            spiceLevel={item.spiceLevel}
           />
         ))}
       </div>

@@ -39,11 +39,6 @@ export default async function LynnwoodCategoryPage({ params }: CategoryPageProps
     notFound();
   }
 
-  // Split items into two columns for print layout
-  const midpoint = Math.ceil(category.items.length / 2);
-  const leftColumn = category.items.slice(0, midpoint);
-  const rightColumn = category.items.slice(midpoint);
-
   return (
     <div className="max-w-4xl mx-auto px-6 py-10 print:py-6 print:px-4 page-break">
       {/* Menu header with restaurant name */}
@@ -54,28 +49,16 @@ export default async function LynnwoodCategoryPage({ params }: CategoryPageProps
 
       <CategoryHeader name={category.name} note={category.note} />
 
-      {/* Two-column layout for menu items */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0">
-        <div className="border-r-0 md:border-r border-[#D4AF37]/20 md:pr-6">
-          {leftColumn.map((item, index) => (
-            <MenuItem
-              key={`${item.name}-${index}`}
-              name={item.name}
-              description={item.description}
-              price={item.price}
-            />
-          ))}
-        </div>
-        <div className="md:pl-2">
-          {rightColumn.map((item, index) => (
-            <MenuItem
-              key={`${item.name}-${index}`}
-              name={item.name}
-              description={item.description}
-              price={item.price}
-            />
-          ))}
-        </div>
+      {/* Single column layout for menu items */}
+      <div className="max-w-2xl mx-auto">
+        {category.items.map((item, index) => (
+          <MenuItem
+            key={`${item.name}-${index}`}
+            name={item.name}
+            description={item.description}
+            price={item.price}
+          />
+        ))}
       </div>
 
       {/* Decorative footer */}

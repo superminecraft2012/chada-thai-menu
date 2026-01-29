@@ -21,7 +21,7 @@ export default function MenuItem({ name, description, price, spiceLevel }: MenuI
                 alt="spicy"
                 width={32}
                 height={32}
-                className="inline-block relative top-[10px]"
+                className="inline-block relative top-[10px] -left-[10px]"
               />
             ))}
           </span>

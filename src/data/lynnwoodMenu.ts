@@ -23,7 +23,7 @@ export const menuData: MenuCategory[] = [
         name: "Spring Rolls",
         description: "Mixed vegetables wrapped in egg roll wrappers, deep-fried. Served with special plum sauce.",
         price: "$11.45",
-        glutenFree: true,
+        vegan: true,
       },
       {
         name: "Pot Stickers",
@@ -55,7 +55,7 @@ export const menuData: MenuCategory[] = [
         name: "Chicken Satay",
         description: "Grilled marinated chicken in coconut milk, curry powder, and garlic on skewers. Served with peanut sauce and cucumber salad.",
         price: "$12.45",
-        vegan: true,
+        glutenFree: true,
       },
       {
         name: "Moo Ping",
@@ -176,6 +176,11 @@ export const menuData: MenuCategory[] = [
         description: "Ground chicken in spicy lime juice, garnished with red and green onion and cilantro, served on fresh lettuce.",
         price: "$18.45",
       },
+      {
+        name: "Crying Tiger",
+        description: "Grilled marinated beef served with spicy lime dipping sauce.",
+        price: "$17.45",
+      },
     ],
   },
   {
@@ -199,12 +204,12 @@ export const menuData: MenuCategory[] = [
       },
       {
         name: "Fisherman Secret",
-        description: "Seafood combination sautéed with onion, sweet basil, bell peppers, mushrooms, green beans, and spices.",
+        description: "Seafood combination sautéed with mixed vegetables, fresh mushrooms, and spices.",
         price: "$20.45",
       },
       {
         name: "Phad Talay",
-        description: "Seafood combination sautéed with mixed vegetables, fresh mushrooms, and spices.",
+        description: "Seafood combination sautéed with onion, sweet basil, bell peppers, mushrooms, green beans, and spices.",
         price: "$20.45",
       },
     ],
@@ -262,7 +267,7 @@ export const menuData: MenuCategory[] = [
       },
       {
         name: "Black Pepper Beef",
-        description: "Stir-fried beef, baby carrots, celery, onion, green onion, and black pepper sauce.",
+        description: "Stir-fried beef, carrots, celery, onion, green onion, and black pepper sauce.",
         price: "$18.45",
       },
     ],
@@ -590,7 +595,7 @@ export const menuData: MenuCategory[] = [
       {
         name: "Sticky Rice",
         description: "",
-        price: "$4.50",
+        price: "$4.00",
       },
       {
         name: "Peanut Sauce (Big)",

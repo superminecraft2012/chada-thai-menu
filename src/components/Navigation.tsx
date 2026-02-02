@@ -28,7 +28,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="bg-[#8B0000] shadow-lg sticky top-0 z-50 no-print">
+    <nav className="bg-[#3D0000] shadow-lg sticky top-0 z-50 no-print">
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex items-center justify-between h-14">
           <Link href={locationInfo?.basePath || "/"} className="flex items-center gap-2">
@@ -57,8 +57,8 @@ export default function Navigation() {
                 href={locationInfo.basePath}
                 className={`px-3 py-1.5 rounded text-sm transition-colors ${
                   pathname === locationInfo.basePath
-                    ? "bg-[#FFF8F0] text-[#8B0000] font-medium"
-                    : "text-white/80 hover:bg-[#5C0000] hover:text-white"
+                    ? "bg-[#D4AF37] text-[#3D0000] font-medium"
+                    : "text-white/80 hover:bg-white/10 hover:text-white"
                 }`}
               >
                 Cover
@@ -69,8 +69,8 @@ export default function Navigation() {
                   href={`${locationInfo.basePath}/${category.slug}`}
                   className={`px-3 py-1.5 rounded text-sm transition-colors whitespace-nowrap ${
                     isActive(`/${category.slug}`)
-                      ? "bg-[#FFF8F0] text-[#8B0000] font-medium"
-                      : "text-white/80 hover:bg-[#5C0000] hover:text-white"
+                      ? "bg-[#D4AF37] text-[#3D0000] font-medium"
+                      : "text-white/80 hover:bg-white/10 hover:text-white"
                   }`}
                 >
                   {category.name}

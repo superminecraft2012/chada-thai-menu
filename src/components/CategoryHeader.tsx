@@ -13,7 +13,7 @@ export default function CategoryHeader({ name, note }: CategoryHeaderProps) {
         <div className="w-16 h-px bg-[#D4AF37]"></div>
       </div>
       
-      <h1 className="text-4xl md:text-5xl font-bold text-[#8B0000] mb-3 font-serif">
+      <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 font-serif">
         {name}
       </h1>
       
@@ -25,7 +25,7 @@ export default function CategoryHeader({ name, note }: CategoryHeaderProps) {
       </div>
       
       {note && (
-        <p className="text-[#5C0000] italic text-sm bg-[#D4AF37]/10 inline-block px-4 py-2 rounded">
+        <p className="text-white/90 italic text-sm bg-[#D4AF37]/20 inline-block px-4 py-2 rounded">
           {note}
         </p>
       )}

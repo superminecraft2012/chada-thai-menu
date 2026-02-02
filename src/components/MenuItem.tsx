@@ -11,19 +11,19 @@ interface MenuItemProps {
 
 export default function MenuItem({ name, description, price, spiceLevel, vegan, glutenFree }: MenuItemProps) {
   return (
-    <div className="py-3 border-b border-[#D4AF37]/20 last:border-b-0">
+    <div className="py-3 border-b border-[#D4AF37]/30 last:border-b-0">
       <div className="flex justify-between items-baseline gap-2">
-        <h3 className="text-lg font-semibold text-[#8B0000]">{name}</h3>
+        <h3 className="text-lg font-semibold text-white">{name}</h3>
         {/* Dietary indicators */}
         {(vegan || glutenFree) && (
           <span className="flex items-center gap-1 shrink-0 relative -top-[1px]">
             {vegan && (
-              <span className="w-6 h-6 rounded-full border-2 border-green-600 text-green-600 text-xs font-bold flex items-center justify-center">
+              <span className="w-6 h-6 rounded-full border-2 border-green-400 text-green-400 text-xs font-bold flex items-center justify-center">
                 V
               </span>
             )}
             {glutenFree && (
-              <span className="w-6 h-6 rounded-full border-2 border-amber-600 text-amber-600 text-[10px] font-bold flex items-center justify-center">
+              <span className="w-6 h-6 rounded-full border-2 border-amber-400 text-amber-400 text-[10px] font-bold flex items-center justify-center">
                 GF
               </span>
             )}
@@ -44,11 +44,11 @@ export default function MenuItem({ name, description, price, spiceLevel, vegan, 
             ))}
           </span>
         )}
-        <div className="flex-1 border-b border-dotted border-[#8B0000]/30 mx-2 mb-1"></div>
-        <span className="text-lg font-bold text-[#5C0000] whitespace-nowrap">{price}</span>
+        <div className="flex-1 border-b border-dotted border-[#D4AF37]/50 mx-2 mb-1"></div>
+        <span className="text-lg font-bold text-[#D4AF37] whitespace-nowrap">{price}</span>
       </div>
       {description && (
-        <p className="text-sm text-gray-600 mt-1 leading-relaxed">{description}</p>
+        <p className="text-sm text-white/80 mt-1 leading-relaxed">{description}</p>
       )}
     </div>
   );

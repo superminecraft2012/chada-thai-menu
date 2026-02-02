@@ -44,7 +44,7 @@ export default async function LynnwoodCategoryPage({ params }: CategoryPageProps
       {/* Menu header with restaurant name */}
       <div className="text-center mb-6 print:mb-4">
         <h2 className="text-2xl font-bold text-[#D4AF37] tracking-wider">CHADA THAI</h2>
-        <p className="text-sm text-[#8B0000]/70 tracking-widest">LYNNWOOD</p>
+        <p className="text-sm text-white/70 tracking-widest">LYNNWOOD</p>
       </div>
 
       <CategoryHeader name={category.name} note={category.note} />
@@ -83,7 +83,7 @@ export default async function LynnwoodCategoryPage({ params }: CategoryPageProps
               {prevCategory ? (
                 <a
                   href={`/lynnwood/${prevCategory.slug}`}
-                  className="flex items-center gap-2 text-[#8B0000] hover:text-[#5C0000] transition-colors"
+                  className="flex items-center gap-2 text-white hover:text-[#D4AF37] transition-colors"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -96,7 +96,7 @@ export default async function LynnwoodCategoryPage({ params }: CategoryPageProps
               {nextCategory ? (
                 <a
                   href={`/lynnwood/${nextCategory.slug}`}
-                  className="flex items-center gap-2 text-[#8B0000] hover:text-[#5C0000] transition-colors"
+                  className="flex items-center gap-2 text-white hover:text-[#D4AF37] transition-colors"
                 >
                   <span>{nextCategory.name}</span>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

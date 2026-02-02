@@ -18,10 +18,10 @@ export default function RootLayout({
       <body className="antialiased">
         <LocationSwitcher />
         <Navigation />
-        <main className="min-h-screen bg-[#FFF8F0] print:bg-white">
+        <main className="min-h-screen bg-[#5C0000] print:bg-white">
           {children}
         </main>
-        <footer className="bg-[#8B0000] text-white py-6 no-print">
+        <footer className="bg-[#3D0000] text-white py-6 no-print">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <h2 className="text-xl font-bold text-[#D4AF37] font-serif">Chada Thai</h2>
             <p className="text-white/70 text-sm">Lynnwood & Seattle, WA</p>

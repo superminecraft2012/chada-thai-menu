@@ -34,7 +34,7 @@ export default function LocationSwitcher() {
   };
 
   return (
-    <div className="bg-[#5C0000] text-white no-print">
+    <div className="bg-[#2D0000] text-white no-print">
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex items-center justify-center py-2 gap-1">
           <span className="text-xs text-white/60 mr-3 uppercase tracking-wider">Location:</span>
@@ -44,8 +44,8 @@ export default function LocationSwitcher() {
               onClick={() => handleSwitch(location.id)}
               className={`px-4 py-1.5 text-sm font-medium rounded transition-all ${
                 currentLocation === location.id
-                  ? "bg-[#D4AF37] text-[#5C0000]"
-                  : "bg-[#8B0000] text-white/80 hover:bg-[#8B0000]/80 hover:text-white"
+                  ? "bg-[#D4AF37] text-[#2D0000]"
+                  : "bg-[#5C0000] text-white/80 hover:bg-[#8B0000] hover:text-white"
               }`}
             >
               {location.name}

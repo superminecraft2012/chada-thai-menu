@@ -41,12 +41,6 @@ export default async function LynnwoodCategoryPage({ params }: CategoryPageProps
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-10 print:py-6 print:px-4 page-break">
-      {/* Menu header with restaurant name */}
-      <div className="text-center mb-6 print:mb-4">
-        <h2 className="text-2xl font-bold text-[#D4AF37] tracking-wider">CHADA THAI</h2>
-        <p className="text-sm text-white/70 tracking-widest">LYNNWOOD</p>
-      </div>
-
       <CategoryHeader name={category.name} note={category.note} />
 
       {/* Single column layout for menu items */}

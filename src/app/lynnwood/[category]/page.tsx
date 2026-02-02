@@ -41,7 +41,7 @@ export default async function LynnwoodCategoryPage({ params }: CategoryPageProps
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-10 print:py-6 print:px-4 page-break">
-      <div id="export-content">
+      <div id="export-content" className="py-[5px]">
         <CategoryHeader name={category.name} note={category.note} />
 
         {/* Single column layout for menu items */}

@@ -17,7 +17,7 @@ export default function ExportButton() {
 
     const dataUrl = await domToPng(content as HTMLElement, {
       backgroundColor: '#3D0000',
-      scale: 4,
+      scale: 16,
     });
     
     return dataUrl;

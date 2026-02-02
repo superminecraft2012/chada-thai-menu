@@ -18,7 +18,7 @@ export default function RootLayout({
       <body className="antialiased">
         <LocationSwitcher />
         <Navigation />
-        <main className="min-h-screen bg-[#2D0000] print:bg-white">
+        <main className="min-h-screen bg-[#3D0000] print:bg-white">
           {children}
         </main>
         <footer className="bg-[#3D0000] text-white py-6 no-print">

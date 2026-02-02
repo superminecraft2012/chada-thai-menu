@@ -16,7 +16,7 @@
 }
 
 body {
-  background: #2D0000;
+  background: #3D0000;
   color: var(--color-text-light);
   font-family: 'Georgia', 'Times New Roman', serif;
   min-height: 100vh;
@@ -50,7 +50,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #2D0000;
+  background: #3D0000;
 }
 
 ::-webkit-scrollbar-thumb {

@@ -45,7 +45,7 @@ export default function MenuItem({ name, description, price, spiceLevel, vegan, 
           </span>
         )}
         <div className="flex-1 border-b border-dotted border-[#D4AF37]/50 mx-2 mb-1"></div>
-        <span className="text-lg font-bold text-[#D4AF37] whitespace-nowrap">{price}</span>
+        <span className="text-lg font-bold text-white whitespace-nowrap">{price}</span>
       </div>
       {description && (
         <p className="text-sm text-white/80 mt-1 leading-relaxed">{description}</p>

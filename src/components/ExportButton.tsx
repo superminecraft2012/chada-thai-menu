@@ -9,18 +9,27 @@ export default function ExportButton() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const exportCurrentPage = async () => {
+  const exportCurrentPage = async (retries = 3): Promise<string | null> => {
     const { domToPng } = await import("modern-screenshot");
     
     const content = document.getElementById('export-content') || document.querySelector('main > div');
     if (!content) return null;
 
-    const dataUrl = await domToPng(content as HTMLElement, {
-      backgroundColor: '#3D0000',
-      scale: 16,
-    });
-    
-    return dataUrl;
+    for (let attempt = 0; attempt < retries; attempt++) {
+      try {
+        const dataUrl = await domToPng(content as HTMLElement, {
+          backgroundColor: '#3D0000',
+          scale: 8,
+        });
+        return dataUrl;
+      } catch (e) {
+        console.error(`Export attempt ${attempt + 1} failed:`, e);
+        if (attempt < retries - 1) {
+          await new Promise(r => setTimeout(r, 500));
+        }
+      }
+    }
+    return null;
   };
 
   const downloadImage = (dataUrl: string, fileName: string) => {
@@ -32,6 +41,7 @@ export default function ExportButton() {
 
   const handleExportAll = useCallback(async () => {
     setIsExporting(true);
+    const failed: string[] = [];
     
     try {
       // Determine if we're in Lynnwood or Seattle
@@ -51,25 +61,30 @@ export default function ExportButton() {
         
         // Navigate to the page
         const targetPath = `${basePath}/${category.slug}`;
-        if (pathname !== targetPath) {
-          router.push(targetPath);
-          // Wait for navigation and render
-          await new Promise(r => setTimeout(r, 1000));
-        }
+        router.push(targetPath);
+        
+        // Wait for navigation and render
+        await new Promise(r => setTimeout(r, 1500));
         
         // Export the page
         const dataUrl = await exportCurrentPage();
         if (dataUrl) {
           const fileName = `${locationName}-${String(i + 1).padStart(2, '0')}-${category.slug}.png`;
           downloadImage(dataUrl, fileName);
+        } else {
+          failed.push(category.name);
         }
         
-        // Small delay between downloads
-        await new Promise(r => setTimeout(r, 300));
+        // Delay between downloads
+        await new Promise(r => setTimeout(r, 500));
       }
       
-      setProgress("Done!");
-      setTimeout(() => setProgress(""), 2000);
+      if (failed.length > 0) {
+        setProgress(`Done! Failed: ${failed.join(', ')}`);
+      } else {
+        setProgress("Done!");
+      }
+      setTimeout(() => setProgress(""), 4000);
       
     } catch (error) {
       console.error('Export failed:', error);

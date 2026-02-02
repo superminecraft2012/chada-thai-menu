@@ -41,10 +41,11 @@ export default async function SeattleCategoryPage({ params }: CategoryPageProps)
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-10 print:py-6 print:px-4 page-break">
-      <CategoryHeader name={category.name} note={category.note} />
+      <div id="export-content">
+        <CategoryHeader name={category.name} note={category.note} />
 
-      {/* Single column layout for menu items */}
-      <div className="max-w-2xl mx-auto">
+        {/* Single column layout for menu items */}
+        <div className="max-w-2xl mx-auto">
         {category.items.map((item, index) => (
           <MenuItem
             key={`${item.name}-${index}`}
@@ -56,11 +57,12 @@ export default async function SeattleCategoryPage({ params }: CategoryPageProps)
         ))}
       </div>
 
-      {/* Decorative footer */}
-      <div className="flex items-center justify-center gap-4 mt-10 print:mt-6">
-        <div className="w-20 h-px bg-[#D4AF37]/50"></div>
-        <div className="text-[#D4AF37] text-xl">✦</div>
-        <div className="w-20 h-px bg-[#D4AF37]/50"></div>
+        {/* Decorative footer */}
+        <div className="flex items-center justify-center gap-4 mt-10 print:mt-6">
+          <div className="w-20 h-px bg-[#D4AF37]/50"></div>
+          <div className="text-[#D4AF37] text-xl">✦</div>
+          <div className="w-20 h-px bg-[#D4AF37]/50"></div>
+        </div>
       </div>
 
       {/* Navigation between categories - hidden in print */}

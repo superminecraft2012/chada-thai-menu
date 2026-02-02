@@ -11,20 +11,18 @@ export default function ExportButton() {
     try {
       const { domToPng } = await import("modern-screenshot");
       
-      // Get the main content area
-      const main = document.querySelector('main');
-      if (!main) {
+      // Get the page content container (the div inside main with the actual content)
+      const content = document.querySelector('main > div');
+      if (!content) {
         alert('Could not find content to export');
         return;
       }
 
-      // Generate the image - capture full height
-      const dataUrl = await domToPng(main as HTMLElement, {
+      // Generate the image - let it auto-size based on content
+      const dataUrl = await domToPng(content as HTMLElement, {
         backgroundColor: '#5C0000',
         scale: 2,
         quality: 1,
-        width: 850,  // Standard page width
-        height: main.scrollHeight, // Full content height
       });
 
       // Download the image

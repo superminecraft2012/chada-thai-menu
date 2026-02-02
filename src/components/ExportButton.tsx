@@ -9,8 +9,7 @@ export default function ExportButton() {
     setIsExporting(true);
     
     try {
-      // Dynamically import html2canvas
-      const html2canvas = (await import("html2canvas")).default;
+      const { domToPng } = await import("modern-screenshot");
       
       // Get the main content area
       const main = document.querySelector('main');
@@ -19,41 +18,26 @@ export default function ExportButton() {
         return;
       }
 
-      // Hide elements we don't want in the export
-      const noExportElements = document.querySelectorAll('.no-print, nav, footer');
-      const originalStyles: { el: HTMLElement; display: string }[] = [];
-      
-      noExportElements.forEach(el => {
-        const htmlEl = el as HTMLElement;
-        originalStyles.push({ el: htmlEl, display: htmlEl.style.display });
-        htmlEl.style.display = 'none';
-      });
-
-      // Capture the page
-      const canvas = await html2canvas(main as HTMLElement, {
+      // Generate the image
+      const dataUrl = await domToPng(main as HTMLElement, {
         backgroundColor: '#5C0000',
         scale: 2,
-        useCORS: true,
-        logging: false,
-      });
-
-      // Restore hidden elements
-      originalStyles.forEach(({ el, display }) => {
-        el.style.display = display;
+        quality: 1,
       });
 
       // Download the image
       const link = document.createElement('a');
       const pageName = window.location.pathname.split('/').filter(Boolean).join('-') || 'home';
       link.download = `chada-thai-${pageName}.png`;
-      link.href = canvas.toDataURL('image/png');
+      link.href = dataUrl;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
       
     } catch (error) {
       console.error('Export failed:', error);
-      alert('Export failed. Please try again.');
+      // Fallback to print
+      window.print();
     } finally {
       setIsExporting(false);
     }

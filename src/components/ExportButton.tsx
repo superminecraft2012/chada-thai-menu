@@ -18,11 +18,13 @@ export default function ExportButton() {
         return;
       }
 
-      // Generate the image
+      // Generate the image - capture full height
       const dataUrl = await domToPng(main as HTMLElement, {
         backgroundColor: '#5C0000',
         scale: 2,
         quality: 1,
+        width: 850,  // Standard page width
+        height: main.scrollHeight, // Full content height
       });
 
       // Download the image

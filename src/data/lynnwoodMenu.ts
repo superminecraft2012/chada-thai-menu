@@ -63,7 +63,7 @@ export const menuData: MenuCategory[] = [
         price: "$12.45",
       },
       {
-        name: "Fresh Rolls Tofu",
+        name: "Fresh Rolls (Tofu)",
         description: "Vermicelli noodles, tofu, lettuce, cucumber, and basil. Wrapped in rice paper. Served with our special sauce.",
         price: "$11.45",
         vegan: true,

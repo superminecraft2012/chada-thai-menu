@@ -18,12 +18,12 @@ export default function MenuItem({ name, description, price, spiceLevel, vegan, 
         {(vegan || glutenFree) && (
           <span className="flex items-center gap-1 shrink-0 relative -top-[1px]">
             {vegan && (
-              <span className="w-6 h-6 rounded-full border-2 border-green-400 text-green-400 text-xs font-bold flex items-center justify-center">
+              <span className="w-6 h-6 rounded-full border-2 border-white text-white text-xs font-bold flex items-center justify-center">
                 V
               </span>
             )}
             {glutenFree && (
-              <span className="w-6 h-6 rounded-full border-2 border-amber-400 text-amber-400 text-[10px] font-bold flex items-center justify-center">
+              <span className="w-6 h-6 rounded-full border-2 border-white text-white text-[10px] font-bold flex items-center justify-center">
                 GF
               </span>
             )}

@@ -588,16 +588,6 @@ export const menuData: MenuCategory[] = [
         price: "$7.95",
       },
       {
-        name: "Coconut Ice Cream",
-        description: "",
-        price: "$6.95",
-      },
-      {
-        name: "Thai Tea Ice Cream",
-        description: "",
-        price: "$6.95",
-      },
-      {
         name: "Mango with Sweet Rice",
         description: "Seasonal only",
         price: "$13.45",
@@ -613,24 +603,9 @@ export const menuData: MenuCategory[] = [
         price: "$12.45",
       },
       {
-        name: "Coconut Sundae",
-        description: "",
-        price: "$10.45",
-      },
-      {
-        name: "Thai Tea Sundae Grass Jelly",
-        description: "",
-        price: "$9.95",
-      },
-      {
         name: "Fried Banana with Coconut Ice Cream",
         description: "",
         price: "$10.95",
-      },
-      {
-        name: "Fried Banana",
-        description: "",
-        price: "$9.95",
       },
     ],
   },

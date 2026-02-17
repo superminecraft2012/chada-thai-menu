@@ -214,7 +214,7 @@ export const menuData: MenuCategory[] = [
       },
       {
         name: "Lime Chili Steamed Fish",
-        description: "",
+        description: "A steamed whole fish dish (*contains bones) on a bed of steamed cabbage, topped with a zesty lime, garlic, fresh sliced chili, and fresh cilantro. Served with a fragrant fish broth, it offers a refreshing balance of sour, spicy, and savory flavors.",
         price: "$27.95",
       },
     ],

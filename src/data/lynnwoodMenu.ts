@@ -585,7 +585,7 @@ export const menuData: MenuCategory[] = [
       {
         name: "Black Rice Pudding",
         description: "",
-        price: "$6.95",
+        price: "$7.95",
       },
       {
         name: "Coconut Ice Cream",
@@ -600,17 +600,17 @@ export const menuData: MenuCategory[] = [
       {
         name: "Mango with Sweet Rice",
         description: "Seasonal only",
-        price: "$12.45",
+        price: "$13.45",
       },
       {
         name: "Taro Custard with Sweet Rice",
         description: "",
-        price: "$11.45",
+        price: "$12.45",
       },
       {
         name: "Pumpkin Custard with Sweet Rice",
         description: "",
-        price: "$11.45",
+        price: "$12.45",
       },
       {
         name: "Coconut Sundae",

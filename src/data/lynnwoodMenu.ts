@@ -625,7 +625,7 @@ export const menuData: MenuCategory[] = [
       {
         name: "Fried Banana with Coconut Ice Cream",
         description: "",
-        price: "$9.95",
+        price: "$10.95",
       },
       {
         name: "Fried Banana",

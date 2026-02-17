@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { menuData as lynnwoodMenu } from "@/data/lynnwoodMenu";
 import { menuData as seattleMenu } from "@/data/seattleMenu";
 import ExportButton from "./ExportButton";
+import CsvExportButton from "./CsvExportButton";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -37,7 +38,12 @@ export default function Navigation() {
             {locationInfo && <span className="text-xs text-white/70">{locationInfo.name}</span>}
           </Link>
           
-          {locationInfo && <ExportButton />}
+          {locationInfo && (
+            <div className="flex items-center gap-3">
+              <CsvExportButton />
+              <ExportButton />
+            </div>
+          )}
         </div>
         
         {/* Category navigation - only show when in a location */}

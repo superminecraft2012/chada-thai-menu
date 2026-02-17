@@ -212,6 +212,11 @@ export const menuData: MenuCategory[] = [
         description: "Seafood combination sautéed with onion, sweet basil, bell peppers, mushrooms, green beans, and spices.",
         price: "$20.45",
       },
+      {
+        name: "Lime Chili Steamed Fish",
+        description: "",
+        price: "$27.95",
+      },
     ],
   },
   {
